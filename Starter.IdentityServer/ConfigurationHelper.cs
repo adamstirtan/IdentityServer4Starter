@@ -32,14 +32,14 @@ namespace Starter.IdentityServer
                         Password = "alice",
                         Claims =
                         {
-                          new Claim(JwtClaimTypes.Name, "Alice Smith"),
-                          new Claim(JwtClaimTypes.GivenName, "Alice"),
-                          new Claim(JwtClaimTypes.FamilyName, "Smith"),
-                          new Claim(JwtClaimTypes.Email, "AliceSmith@email.com"),
-                          new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
-                          new Claim(JwtClaimTypes.Role, "admin"),
-                          new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
-                          new Claim(JwtClaimTypes.Address, JsonSerializer.Serialize(address), IdentityServerConstants.ClaimValueTypes.Json)
+                            new Claim(JwtClaimTypes.Name, "Alice Smith"),
+                            new Claim(JwtClaimTypes.GivenName, "Alice"),
+                            new Claim(JwtClaimTypes.FamilyName, "Smith"),
+                            new Claim(JwtClaimTypes.Email, "AliceSmith@email.com"),
+                            new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
+                            new Claim(JwtClaimTypes.Role, "admin"),
+                            new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
+                            new Claim(JwtClaimTypes.Address, JsonSerializer.Serialize(address), IdentityServerConstants.ClaimValueTypes.Json)
                         }
                     },
                     new TestUser
@@ -70,7 +70,7 @@ namespace Starter.IdentityServer
             new IdentityResource
             {
                 Name = "role",
-                UserClaims = new List<string> {"role"}
+                UserClaims = new List<string> { "role" }
             }
         };
 
@@ -95,7 +95,7 @@ namespace Starter.IdentityServer
             new Client
             {
                 // m2m client credentials flow client
-                ClientId = "Avanti API",
+                ClientId = "Avanti.API",
                 ClientName = "Client Credentials Client",
                 ClientSecrets = { new Secret("SuperSecretPassword".Sha256()) },
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
@@ -104,7 +104,7 @@ namespace Starter.IdentityServer
             new Client
             {
                 // interactive client using code flow + pkce
-                ClientId = "Avanti Web",
+                ClientId = "Avanti.Web",
                 ClientSecrets = { new Secret("SuperSecretPassword".Sha256()) },
                 AllowedGrantTypes = GrantTypes.Code,
                 RedirectUris = { "https://localhost:5444/signin-oidc" },
