@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using Starter.API.Models;
@@ -6,6 +7,7 @@ namespace Starter.API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize]
 public class PayStatementController : ControllerBase
 {
     private readonly ILogger<PayStatementController> _logger;
