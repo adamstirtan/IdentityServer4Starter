@@ -44,7 +44,7 @@
       "sslPort": 8001,
       "httpPort": 8000,
       "publishAllPorts": true,
-      "useSSL": true
+      "useSSL": false
     }
   }
 }
