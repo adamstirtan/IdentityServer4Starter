@@ -6,7 +6,7 @@ builder.Services.AddAuthentication(IdentityServerAuthenticationDefaults.Authenti
     .AddIdentityServerAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme, options =>
     {
         options.ApiName = "Avanti";
-        options.Authority = "https://localhost:5443";
+        options.Authority = "http://192.168.1.50:9000";
     });
 
 builder.Services.AddControllers();
