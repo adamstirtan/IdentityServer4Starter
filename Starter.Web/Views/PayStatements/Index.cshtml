@@ -1,0 +1,21 @@
+﻿@using Starter.API.Models
+
+@model List<PayStatement>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Pay Statements</h1>
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.PayDate</td>
+            <td>@item.Amount</td>
+        </tr>
+    }
+</table>
+

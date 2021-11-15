@@ -20,12 +20,18 @@ public class PayStatementController : ControllerBase
     [HttpGet(Name = "GetPayStatements")]
     public IEnumerable<PayStatement> Get()
     {
-        return Enumerable.Range(1, 5).Select(index => new PayStatement
+        List<PayStatement> result = new();
+
+        for (int i = 0; i < 5; i++)
         {
-            Id = index,
-            Amount = Random.Shared.Next(1000, 5000),
-            PayDate = DateTime.Now.AddDays(index)
-        })
-        .ToArray();
+            result.Add(new PayStatement
+            {
+                Id = i,
+                Amount = Random.Shared.Next(1000, 5000),
+                PayDate = DateTime.Now.AddDays(i)
+            });
+        }
+
+        return result;
     }
 }
